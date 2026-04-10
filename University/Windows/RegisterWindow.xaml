@@ -1,0 +1,50 @@
+﻿<Window x:Class="University.Windows.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:University.Windows"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="450" Width="450"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Регистрация" FontSize="24" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="1" Text="Логин:"/>
+        <TextBox Grid.Row="2" x:Name="UsernameTextBox" Height="30" Margin="0,5,0,10"/>
+
+        <TextBlock Grid.Row="3" Text="Пароль:"/>
+        <PasswordBox Grid.Row="4" x:Name="PasswordBox" Height="30" Margin="0,5,0,10"/>
+
+        <TextBlock Grid.Row="5" Text="Подтверждение:"/>
+        <PasswordBox Grid.Row="6" x:Name="ConfirmPasswordBox" Height="30" Margin="0,5,0,10"/>
+
+        <TextBlock Grid.Row="7" Text="Требования к паролю:" FontWeight="Bold"/>
+        <TextBlock Grid.Row="8" TextWrapping="Wrap" Margin="0,20,0,10" FontSize="11">
+        • 8+ символов • A-Z • a-z • 0-9 • спец.символы
+        </TextBlock>
+
+        <TextBlock Grid.Row="9" x:Name="MessageTextBlock" Foreground="Red" Margin="0,10"/>
+
+        <StackPanel Grid.Row="10" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Зарегистрироваться" Width="150" Height="30" Margin="5" 
+                Click="RegisterButton_Click"/>
+            <Button Content="Назад" Width="100" Height="30" Margin="5"
+                Click="BackButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

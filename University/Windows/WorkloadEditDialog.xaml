@@ -1,0 +1,56 @@
+﻿<Window x:Class="University.Windows.WorkloadEditDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:University.Windows"
+        mc:Ignorable="d"
+        Title="Нагрузка преподавателя" Height="400" Width="500"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Нагрузка преподавателя" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"
+                   Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="1" x:Name="IdLabel" Text="ID записи:" Visibility="Collapsed"/>
+        <TextBlock Grid.Row="2" x:Name="IdText" Visibility="Collapsed" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="3" x:Name="ManualIdLabel" Text="Введите ID (необязательно):" Margin="0,10,0,5" 
+                   Foreground="Gray" Visibility="Collapsed"/>
+        <TextBox Grid.Row="4" x:Name="ManualIdTextBox" Height="30" Margin="0,0,0,10" 
+                 Visibility="Collapsed" ToolTip="Оставьте пустым для автоматической генерации"/>
+
+        <TextBlock Grid.Row="5" Text="Выберите преподавателя:" Margin="0,0,0,5"/>
+        <ComboBox Grid.Row="6" x:Name="TeacherComboBox" Height="30" Margin="0,0,0,10"
+                  DisplayMemberPath="FullName"/>
+
+        <TextBlock Grid.Row="7" Text="Выберите предмет:" Margin="0,0,0,5"/>
+        <ComboBox Grid.Row="8" x:Name="SubjectComboBox" Height="30" Margin="0,0,0,10"
+                  DisplayMemberPath="SubjectName"/>
+
+        <StackPanel Grid.Row="9" Margin="0,0,0,10">
+            <TextBlock Text="Информация о предмете:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="SubjectInfoText" TextWrapping="Wrap" FontSize="12"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="10" x:Name="ErrorText" Foreground="Red" Margin="0,10"/>
+
+        <StackPanel Grid.Row="11" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Сохранить" Width="100" Height="30" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Отмена" Width="100" Height="30" Margin="5" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
